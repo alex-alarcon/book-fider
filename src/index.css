@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
+
+* {
+  box-sizing: border-box;
+}
+
+.input-text {
+  @apply appearance-none bg-transparent border-none text-sm text-gray-darker py-3 px-3 leading-normal;
+}
+
+.input-text:focus {
+  @apply outline-none;
+}
+
+.input-text::placeholder {
+  @apply text-gray-darker;
+}
+
 @tailwind utilities;
