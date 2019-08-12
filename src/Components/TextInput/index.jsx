@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from 'react-spring';
 
-function TextInput({ type, value, onChange, onClear, ...rest }) {
+function TextInput({ type, value, onChange, onClear }) {
   const [isSearching, setIsSearching] = useState(false);
 
   useEffect(() => {
