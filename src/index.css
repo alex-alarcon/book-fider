@@ -17,4 +17,8 @@
   @apply text-gray-darker;
 }
 
+.svg-icon {
+  @apply w-4 h-4 fill-current;
+}
+
 @tailwind utilities;

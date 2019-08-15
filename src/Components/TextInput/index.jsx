@@ -26,6 +26,7 @@ function TextInput({ type, value, onChange, onClear }) {
   const iconIn = useSpring({
     transform: isSearching ? 'translateX(0)' : 'translateX(200%)',
     opacity: isSearching ? '1' : '0',
+    right: isSearching ? '-5px' : '0',
     config,
   });
 
@@ -46,12 +47,12 @@ function TextInput({ type, value, onChange, onClear }) {
 
   return (
     <animated.label
-      className="flex relative items-center w-1/2 rounded p-2 overflow-hidden"
+      className="flex relative items-center w-full rounded p-2 overflow-hidden"
       style={changeBackground}
       htmlFor="book-search"
     >
       <animated.div
-        className="pl-1 text-gray-dark text-sm font-medium absolute"
+        className="text-gray-dark text-sm font-medium absolute"
         style={{
           width: 70,
           ...fade,
@@ -76,12 +77,15 @@ function TextInput({ type, value, onChange, onClear }) {
       />
       <button
         type="button"
-        className="relative w-5 h-5 mr-2 focus:outline-none"
+        className="relative w-5 h-5 focus:outline-none "
         onClick={onClear}
       >
         <animated.svg
-          className="close-icon absolute w-5 h-5 fill-current text-gray-dark text-sm"
+          className="close-icon svg-icon absolute text-gray-dark"
           viewBox="0 0 28 28"
+          fillOpacity="0.5"
+          width="14"
+          height="14"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           style={iconIn}
@@ -89,9 +93,12 @@ function TextInput({ type, value, onChange, onClear }) {
           <path d="M24 2.4L21.6 0 12 9.6 2.4 0 0 2.4 9.6 12 0 21.6 2.4 24l9.6-9.6 9.6 9.6 2.4-2.4-9.6-9.6L24 2.4z" />
         </animated.svg>
         <animated.svg
-          className="search-icon abslute w-5 h-5 fill-current text-gray-dark text-sm"
+          className="search-icon svg-icon abslute text-gray-dark"
           viewBox="0 0 28 28"
+          fillOpacity="0.5"
           fill="none"
+          width="14"
+          height="14"
           xmlns="http://www.w3.org/2000/svg"
           style={iconOut}
         >
